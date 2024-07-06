@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.title{
+  display:flex;
+  flex-direction:row;
+  justity-content:center;
+  align-items:center;
+  margin:auto;
+  width:50%;
+}
+h1{
+  margin:10px auto;
+}
+.game-board {
+  width: 80%;
+  height: 500px;
+  border: 1px solid #333;
+  margin: 0 auto;
+  position: relative; /*como os pipes serão positions absolute, colocamos o container como postion relative para que os pipes não saiam da delimitação do container*/
+  overflow: hidden; /*para que quando animarmos o pipe quando ele sair do container ele não aparça na mais na tela*/
+}
+.pipe {
+  position: absolute; /* para que as imagens de cada pipe não sobresaia em cima das outras*/
+  bottom: 0; /*para colocar a imagem na base do container*/
+  width: 90px;
+  animation: pipe-animation 1s infinite linear;
+}
+.mario {
+  width: 180px;
+  position: absolute;
+  bottom:0;
+}
+.jump {
+  animation: jump 400ms ease-out;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+@keyframes jump {
+  0% {
+    bottom: 0;
+
+  }
+  40%{
+    bottom:290px
+  }
+  50% {
+    bottom: 300px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
