@@ -25,11 +25,11 @@ h1{
 .pipe {
   position: absolute; /* para que as imagens de cada pipe não sobresaia em cima das outras*/
   bottom: 0; /*para colocar a imagem na base do container*/
-  width: 5%;
+  width: 90px;
   animation: pipe-animation 1s infinite linear;
 }
 .mario {
-  width: 20%;
+  width: 180px;
   position: absolute;
   bottom:0;
 }
