@@ -1,21 +1,23 @@
-const mario = document.querySelector(".mario");
-const pipe = document.querySelector(".pipe");
+const avatar = document.querySelector(".avatar");
+const cerca = document.querySelector(".cerca");
 document.addEventListener("keydown", jump);
 function jump() {
-  mario.classList.add("jump");
+  avatar.classList.add("jump");
   setTimeout(() => {
-    mario.classList.remove("jump");
+    avatar.classList.remove("jump");
   }, 500);
 }
 const loop = setInterval(() => {
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', ''); /* o getcomputedstyle pega o estilo que foi computado ness elemento e ai conseguimos acessar todas as propriedades css*/
+  const cercaPosition = cerca.offsetLeft;
+  const avatarPosition = +window.getComputedStyle(avatar).bottom.replace('px', ''); /* o getcomputedstyle pega o estilo que foi computado ness elemento e ai conseguimos acessar todas as propriedades css*/
 
-  if (pipePosition <= 190 && pipePosition > 0  && marioPosition <117) {
-    pipe.style.animation = "none";
-    pipe.style.left = `${pipePosition}px`;
+  if (cercaPosition <= 120 && cercaPosition > 0  && avatarPosition <74) {
+    cerca.style.animation = "none";
+    cerca.style.left = `${cercaPosition}px`;
 
-    mario.style.animation = "none";
-    mario.style.bottom = `${marioPosition}px`;
+    avatar.style.animation = "none";
+    avatar.style.bottom = `${avatarPosition}px`;
+    avatar.src = "C:/Users/Caixa/Downloads/here/JUMP/avatar perdeu.png";
+  
   }
 }, 10);
